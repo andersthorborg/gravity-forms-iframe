@@ -176,11 +176,6 @@ class GFIframe {
 		$form = GFFormsModel::get_form_meta( $form_id );
 		$settings = $this->addon->get_gfiframe_form_settings( $form );
 
-		// Make sure the form can be embedded.
-		if ( empty( $settings['is_enabled'] ) || ! $settings['is_enabled'] ) {
-			wp_die( __( 'Embedding is disabled for this form.', 'gravity-forms-iframe' ) );
-		}
-
 		// Disable the toolbar in case the form is embedded on the same domain.
 		show_admin_bar( false );
 
